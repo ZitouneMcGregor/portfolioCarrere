@@ -1,0 +1,27 @@
+<section class="projets-section">
+  <header class="intro">
+    <h1>Venez découvrir mes projets</h1>
+    <p>Découvrez une sélection de mes travaux front-end.</p>
+  </header>
+
+  <div *ngFor="let projet of projets; let i = index" class="projet-container">
+    <div [ngClass]="{'projet-banniere': true, 'left': i % 2 === 0, 'right': i % 2 !== 0}">
+      <div class="content">
+        <h2>{{ projet.titre }}</h2>
+        <p>{{ projet.description }}</p>
+        <div class="liens">
+          <a *ngIf="projet.lienGithub" href="{{ projet.lienGithub }}" target="_blank">GitHub</a>
+          <a *ngIf="projet.lienWeb" href="{{ projet.lienWeb }}" target="_blank">Site Web</a>
+          <button (click)="openModal(projet)">Détails</button>
+        </div>
+      </div>
+      <div
+        class="banniere-image"
+        [ngStyle]="{'background-image': 'url(' + projet.banniere + ')'}"
+      ></div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <app-modal *ngIf="selectedProjet" [currentProjet]="selectedProjet" (close)="closeModal()"></app-modal>
+</section>

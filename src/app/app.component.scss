@@ -1,0 +1,37 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+app-header {
+  flex-shrink: 0; /* Le header conserve sa taille naturelle */
+  height: 51px; /* Par exemple, donnez une hauteur fixe */
+}
+
+.router-outlet-container {
+  flex-grow: 1; /* Prend tout l'espace disponible */
+  min-height: calc(100vh - 51px); /* Ajuste sa hauteur pour remplir le reste de la fenêtre */
+  position: relative; /* Nécessaire pour le halo et autres éléments positionnés */
+  overflow: hidden;
+}
+
+
+
+#halo {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  background: var(--halo-color);
+  border: 2px solid rgba(255, 255, 255, 0.6); /* Contour */
+  border-radius: 50%;
+  pointer-events: none; /* Évite d'intercepter les clics */
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: background-color 0.5s ease, border-color 0.2s ease;
+}
+
+/* État cliquable */
+body.clickable #halo {
+  background: var(--halo-accent); /* Couleur du halo cliquable */
+  border-color: rgba(255, 0, 0, 0.8); /* Contour renforcé */
+}

@@ -1,0 +1,75 @@
+.homepage {
+  display: flex;
+  flex-direction: row; /* Colonne gauche et droite */
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
+  padding: 2rem;
+  margin-top: 5%;
+
+  .homepage-left {
+    flex: 1;
+    padding: 2rem;
+    text-align: center; /* Centre le texte */
+    
+    h1 {
+      font-size: 4rem; /* Titre plus grand */
+      font-weight: 700; /* Style gras */
+      line-height: 1.2;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.1rem; /* Ajoute de l'espace pour respirer */
+      
+    }
+
+    p {
+      margin: 1.5rem 0;
+      font-size: 1.25rem;
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .social-buttons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center; /* Centre les icônes */
+      gap: 1.5rem;
+
+      .social-btn {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        transition: transform 0.3s, background-color 0.3s;
+
+        svg {
+          width: 50px;
+          height: 50px;
+          fill: var(--text); /* Couleur par défaut (texte) */
+          transition: transform 0.3s ease, fill 0.3s ease;
+        }
+
+        &:hover {
+          transform: scale(1.1); /* Zoom au hover */
+        }
+      }
+    }
+  }
+
+  .homepage-right {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 20px; /* Coins arrondis */
+      transition: transform 0.3s;
+      
+    }
+  }
+}

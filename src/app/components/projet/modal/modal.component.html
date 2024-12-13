@@ -1,0 +1,32 @@
+<div class="modal-wrapper" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div
+        class="background-overlay"
+      ></div>
+      <div class="modal-header">
+        <h2>{{ currentProjet.titre }}</h2>
+      </div>
+      <div class="modal-body">
+        <div class="section">
+          <h3>Description</h3>
+          <p>{{ currentProjet.details }}</p>
+        </div>
+        <div class="section">
+          <h3>Technologies</h3>
+          <p>{{ currentProjet.technologies }}</p>
+        </div>
+        <div class="section">
+          <h3>Objectifs</h3>
+          <p>{{ currentProjet.objectifs }}</p>
+        </div>
+        <div class="section">
+          <h3>Challenges</h3>
+          <p>{{ currentProjet.challenges }}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button (click)="closeModal()">Fermer</button>
+      </div>
+    </div>
+  </div>
+  

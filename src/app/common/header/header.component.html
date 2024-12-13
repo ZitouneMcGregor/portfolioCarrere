@@ -1,0 +1,61 @@
+<header [ngClass]="{'scrolled': isScrolled}">
+
+    <nav class="nav-container">
+
+        <div class="logo">
+            <a routerLink="/accueil" class="logo-link">
+                <img 
+                    *ngIf="isDarkMode"
+                    src="https://img.icons8.com/?size=100&id=W9ZojxN4VaZd&format=png&color=ffffff"
+                    alt="Logo"
+                    class="logo-image"
+                />
+                <img 
+                    *ngIf="!isDarkMode"
+                    src="https://img.icons8.com/?size=100&id=W9ZojxN4VaZd&format=png&color=000000"
+                    alt="Logo"
+                    class="logo-image"
+                />
+            </a>
+        </div>
+
+        <ul class="nav-links">
+          <li>
+            <a routerLink="/accueil" routerLinkActive="active-link">Accueil</a>
+          </li>
+          <li>
+            <a routerLink="/projets" routerLinkActive="active-link">Projets</a>
+          </li>
+          <li>
+            <a routerLink="/cv" routerLinkActive="active-link">CV</a>
+          </li>
+          <li>
+            <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
+          </li>
+        </ul>
+        
+
+      <button class="theme-toggle" (click)="toggleTheme()">
+
+        <!-- Icône pour le mode sombre -->
+        <img 
+          *ngIf="isDarkMode" 
+          src="https://img.icons8.com/?size=100&id=82718&format=png&color=ffffff" 
+          alt="Mode clair" 
+          class="icon" 
+        />
+
+        <!-- Icône pour le mode clair -->
+        <img 
+          *ngIf="!isDarkMode" 
+          src="https://img.icons8.com/?size=100&id=57981&format=png&color=000000" 
+          alt="Mode sombre" 
+          class="icon" 
+        />
+
+      </button>
+
+    </nav>
+  </header>
+  
+  <hr>
