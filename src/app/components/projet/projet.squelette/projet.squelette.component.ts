@@ -21,8 +21,8 @@ export class ProjetSqueletteComponent {
       detailsVisible: false,
       details: 'En cours de développement',
       technologies: 'Angular, Python',
-      objectifs: 'Publier l\'appli',
-      challenges: 'ouais'
+      objectifs: 'Proposer une simulation de paris sportifs avec des côtes uniques gratuitement',
+      challenges: 'Proposer un site stable et sécurisé'
 
     },
     {
@@ -32,8 +32,8 @@ export class ProjetSqueletteComponent {
       lienWeb: null,
       banniere: 'https://www.radiofrance.fr/s3/cruiser-production/2022/01/0a2137f7-6af8-4629-bfca-28698e0c7a00/1200x680_gettyimages-1282093971.jpg',
       detailsVisible: false,
-      details: 'Ouais c est des cartes fut quoi',
-      technologies: 'Angular, Docker',
+      details: 'Cartes FUT personnalisées dans l\'objectif de réaliser un test de charge',
+      technologies: 'Angular, Docker, Kubernetese',
       objectifs: 'Supporter un test de charge conséquent grâce à Docker',
       challenges: 'Ne pas crash'
     },
@@ -47,7 +47,7 @@ export class ProjetSqueletteComponent {
       details: 'Localiser différentes machines connectées à des brocker qui se déplacent',
       technologies: 'Kafka, Docker, VueJS, Python',
       objectifs: 'Localiser au moins 2 personnes en meme temps',
-      challenges: 'Le faire avant noel'
+      challenges: 'Découverte de Kafka et rendu rapide du projet'
     },
     {
       titre: 'Messagerie',
@@ -56,10 +56,10 @@ export class ProjetSqueletteComponent {
       lienWeb: null,
       banniere: 'https://img.freepik.com/photos-gratuite/abstrait-arriere-plan-digital-faible-lignes-connexion-points_1048-6507.jpg?semt=ais_hybrid',
       detailsVisible: false,
-      details: 'Si clément mounic a la meme venez pas attraper ma veste',
+      details: 'Messagerie dans le style d\'Instagram',
       technologies: 'Angular, Python, SQLite3',
-      objectifs: 'Envoyer des messages',
-      challenges: 'Le faire meme si on a TOEIC'
+      objectifs: 'Envoyer et recevoir des messages',
+      challenges: 'Le faire en une journée'
     }
   ];
 
