@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'sass:map';
+
+.red-o {
+  color: red;
+  font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Speciale';
+    src: url('../public/Agressive-OVVzO.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'Specialee', sans-serif;
+    color: var(--text);
+    background-color: var(--background);
+  }
+    
+
+  $themes: (
+    light: (
+      text: #15110f,
+      background: #f2efed,
+      primary: #56483e,
+      secondary: #9db8b0,
+      accent: #566676,
+      pb: #e0e0e0,
+    ),
+    dark: (
+      text: #f0ecea,
+      background: #120f0d,
+      primary: #c1b3a9,
+      secondary: #47625a,
+      accent: #8999a9,
+      pb: #1a1a1a,
+    ),
+   );
+
+// Variables dynamiques via CSS
+:root {
+  --text: #{map-get(map-get($themes, light), text)};
+  --background: #{map-get(map-get($themes, light), background)};
+  --primary: #{map-get(map-get($themes, light), primary)};
+  --secondary: #{map-get(map-get($themes, light), secondary)};
+  --accent: #{map-get(map-get($themes, light), accent)};
+  --halo-color: rgba(0, 0, 0, 0.8);
+  --halo-accent: rgb(86, 102, 118, 0.8);
+  --pb: #e0e0e0
+}
+
+[data-theme="dark"] {
+    --text: #{map-get(map-get($themes, dark), text)};
+    --background: #{map-get(map-get($themes, dark), background)};
+    --primary: #{map-get(map-get($themes, dark), primary)};
+    --secondary: #{map-get(map-get($themes, dark), secondary)};
+    --accent: #{map-get(map-get($themes, dark), accent)};
+    --halo-color: rgba(255, 255, 255, 0.8);
+    --halo-accent: rgb(137, 153, 169, 0.8);
+    --pb: #1a1a1a
+
+}
+
+// Application globale
+body {
+  color: var(--text);
+  background-color: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: none;
+}
+
+/* Couleur du halo lorsqu'il est sur un élément cliquable */
+body.clickable #halo {
+  background: var(--halo-accent); /* Couleur dynamique (rouge vif, par exemple) */
+}
+
+
+body.clickable * {
+  cursor: none !important; /* Assure que le curseur natif reste masqué */
+}
+
+a:hover{ cursor: none }
+button:hover{ cursor: none}
+img:hover{ cursor: none}
+nav:hover{ cursor: none}

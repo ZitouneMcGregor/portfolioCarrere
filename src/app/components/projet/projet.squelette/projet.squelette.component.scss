@@ -1,0 +1,147 @@
+.projets-section {
+  padding: 2rem;
+  color: var(--text);
+
+  .intro {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: var(--secondary);
+    }
+  }
+
+  .projet-container {
+    margin-bottom: 3rem;
+  }
+
+  .projet-banniere {
+    display: flex;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    background: var(--secondary);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 1280px;
+    margin: auto;
+
+    &.left {
+      flex-direction: row;
+
+      .content {
+        text-align: left;
+      }
+
+      .banniere-image {
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &.right {
+      flex-direction: row-reverse;
+
+      .content {
+        text-align: right;
+
+        .liens{
+          justify-content: right;
+        }
+      }
+
+      .banniere-image {
+        clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    .content {
+      flex: 1;
+      padding: 2rem;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+      position: relative;
+
+      h2 {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 0px;
+      }
+
+      p {
+        margin: 1rem 0;
+        font-size: 1rem;
+        color: var(--text);
+      }
+
+      .liens {
+        display: flex;
+        align-items: center;
+
+        a {
+          display: inline-block;
+          margin-right: 1rem;
+          padding: 0.5rem 1rem;
+          border: none;
+          color: var(--background);
+          text-decoration: none;
+          border-radius: 5px;
+          background: var(--accent);
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: var(--background);
+            color: var(--accent);
+          }
+        }
+
+        button {
+          margin-left: 1rem;
+          padding: 0.5rem 1rem;
+          border: none;
+          background: var(--primary);
+          color: var(--background);
+          font-size: 1rem;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+
+          &:hover {
+            background: var(--background);
+            color: var(--primary);
+          }
+
+        }
+      }
+    }
+
+    .banniere-image {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      transition: clip-path 0.5s ease, filter 0.5s ease;
+
+     
+    }
+  }
+
+
+
+  @media (max-width: 768px) {
+    .projet-banniere {
+      flex-direction: column;
+
+      .banniere-image {
+        display: none;  // Cache l'image de la bannière en mode smartphone
+      }
+    }
+  }
+}
